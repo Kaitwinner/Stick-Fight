@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5r0twcxmwi8j"]
+
+[ext_resource type="Texture2D" uid="uid://coy6lsuf304es" path="res://icon.svg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://djmdejfxb4bb3" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://cx8dhdxl8pjtp" path="res://bullet.tscn" id="3_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://d3anpxnkmx7k6" path="res://gun.tscn" id="4_hqtel"]
+[ext_resource type="Script" uid="uid://balnyog7yl177" path="res://gun.gd" id="5_sweqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(130, 130)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_onrkg")
+bullet_scene = ExtResource("3_i3pqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4flbx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="GunPos" type="Node2D" parent="."]
+
+[node name="Gun" parent="GunPos" instance=ExtResource("4_hqtel")]
+script = ExtResource("5_sweqy")
