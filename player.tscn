@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://djmdejfxb4bb3" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://cx8dhdxl8pjtp" path="res://bullet.tscn" id="3_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://d3anpxnkmx7k6" path="res://gun.tscn" id="4_hqtel"]
-[ext_resource type="Script" uid="uid://balnyog7yl177" path="res://gun.gd" id="5_sweqy"]
+[ext_resource type="Script" uid="uid://balnyog7yl177" path="res://gun.gd" id="4_sweqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(130, 130)
@@ -23,6 +23,6 @@ texture = ExtResource("1_4flbx")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="GunPos" type="Node2D" parent="."]
+script = ExtResource("4_sweqy")
 
 [node name="Gun" parent="GunPos" instance=ExtResource("4_hqtel")]
-script = ExtResource("5_sweqy")

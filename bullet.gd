@@ -7,4 +7,3 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(_body):
 	queue_free()
-	

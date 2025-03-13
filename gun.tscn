@@ -5,9 +5,10 @@
 [node name="Gun" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 12)
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("1_vk1bi")
 flip_h = true
 
 [node name="BulletExit" type="Node2D" parent="."]
-position = Vector2(25, -12)
+position = Vector2(25, 0)
