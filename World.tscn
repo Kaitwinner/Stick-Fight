@@ -1,39 +1,52 @@
-[gd_scene load_steps=6 format=3 uid="uid://skk4g4uiltex"]
+[gd_scene load_steps=4 format=3 uid="uid://skk4g4uiltex"]
 
 [ext_resource type="PackedScene" uid="uid://c5r0twcxmwi8j" path="res://player.tscn" id="1_c6gwx"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_2dftf"]
-size = Vector2(15000, 100)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcbcq"]
-size = Vector2(15000, 100)
-
-[sub_resource type="QuadMesh" id="QuadMesh_c6gwx"]
-size = Vector2(50, 50)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dftf"]
-size = Vector2(50, 50)
+[ext_resource type="PackedScene" uid="uid://dxvapcvhaxjcy" path="res://platform1.tscn" id="2_2dftf"]
+[ext_resource type="PackedScene" uid="uid://ced7vxi1fsc2x" path="res://spike.tscn" id="3_bcbcq"]
 
 [node name="world" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_c6gwx")]
-position = Vector2(100, -4)
+position = Vector2(123, 332)
 
-[node name="platform" type="StaticBody2D" parent="."]
-position = Vector2(101, 331)
+[node name="spikes" type="Node2D" parent="."]
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="platform"]
-position = Vector2(-7.15256e-07, -7.62939e-06)
-mesh = SubResource("QuadMesh_2dftf")
+[node name="spike" parent="spikes" instance=ExtResource("3_bcbcq")]
+position = Vector2(-380, 146)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
-shape = SubResource("RectangleShape2D_bcbcq")
+[node name="spike2" parent="spikes" instance=ExtResource("3_bcbcq")]
+position = Vector2(-248, 146)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-92, 253)
+[node name="spike3" parent="spikes" instance=ExtResource("3_bcbcq")]
+position = Vector2(-120, 146)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
-mesh = SubResource("QuadMesh_c6gwx")
+[node name="spike4" parent="spikes" instance=ExtResource("3_bcbcq")]
+position = Vector2(7.99998, 146)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_2dftf")
+[node name="spike5" parent="spikes" instance=ExtResource("3_bcbcq")]
+position = Vector2(136, 146)
+
+[node name="spike6" parent="spikes" instance=ExtResource("3_bcbcq")]
+position = Vector2(272, 146)
+
+[node name="spike7" parent="spikes" instance=ExtResource("3_bcbcq")]
+position = Vector2(400, 146)
+
+[node name="spike8" parent="spikes" instance=ExtResource("3_bcbcq")]
+position = Vector2(536, 146)
+
+[node name="platforms" type="Node2D" parent="."]
+
+[node name="1" parent="platforms" instance=ExtResource("2_2dftf")]
+position = Vector2(6, 567)
+
+[node name="2" parent="platforms" instance=ExtResource("2_2dftf")]
+position = Vector2(-1087, 250)
+scale = Vector2(40, 25)
+
+[node name="3" parent="platforms" instance=ExtResource("2_2dftf")]
+position = Vector2(1264, 250)
+scale = Vector2(40, 25)
+
+[node name="4" parent="platforms" instance=ExtResource("2_2dftf")]
+scale = Vector2(60, 25)

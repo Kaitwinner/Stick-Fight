@@ -1,10 +1,14 @@
 extends CharacterBody2D
 
-@export var speed: float = 200
-@export var jump_force: float = 400
-@export var gravity: float = 800
+class_name Player
+
+@export var health: float = 100
+@export var speed: float = 400
+@export var jump_force: float = 800
+@export var gravity: float = 1000
 @export var bullet_scene: PackedScene
 @export var bullet_speed: float = 2000
+@onready var animation =$AnimationPlayer
 
 func _physics_process(delta):
 	var angle = (get_global_mouse_position() - global_position).angle()
@@ -13,7 +17,7 @@ func _physics_process(delta):
 		cos(angle),
 		sin(angle)
 	) * 80.0
-	
+		
 	if ($GunPos.position.x < 0):
 		$GunPos/Gun.scale = Vector2(1.0, -1.0)
 	else:
@@ -28,11 +32,19 @@ func apply_gravity(delta):
 		velocity.y += gravity * delta  # Apply gravity
 
 func move_player():
-	var direction = Input.get_axis("ui_left", "ui_right")  # Use input actions
-	if direction:
-		velocity.x = direction * speed
+	var left = Input.is_action_pressed("ui_left")
+	var right = Input.is_action_pressed("ui_right")  
+	if left:
+		$Sprite2D.flip_h = true
+		animation.play("run")
+		velocity.x = -speed
+	elif right:
+		$Sprite2D.flip_h = false
+		animation.play("run")
+		velocity.x = speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed * 0.1)  # Smooth stopping
+		animation.play("idle")
+		velocity.x = 0
 
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = -jump_force  # Jumping
@@ -48,3 +60,11 @@ func shoot():
 		var direction = (get_global_mouse_position() - global_position).normalized()
 		bullet.velocity = direction * bullet_speed
 		get_parent().add_child(bullet)
+		
+func apply_damage(damage: float) -> void:
+	health -= damage
+		
+		
+func death():
+	if health == 0:
+		get_tree().quit()

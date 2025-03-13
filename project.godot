@@ -14,3 +14,7 @@ config/name="New Game Project"
 run/main_scene="uid://skk4g4uiltex"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+player=""

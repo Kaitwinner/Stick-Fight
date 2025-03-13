@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxvapcvhaxjcy"]
+
+[ext_resource type="Texture2D" uid="uid://dq407c81cpvj6" path="res://pngegg.png" id="1_o32kh"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_8ulag"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nf4l3"]
+size = Vector2(17.5, 6)
+
+[node name="Node2D" type="StaticBody2D"]
+scale = Vector2(75, 25)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(0.0839043, -0.209763)
+rotation = 3.14159
+scale = Vector2(20.1678, 20.4195)
+mesh = SubResource("QuadMesh_8ulag")
+texture = ExtResource("1_o32kh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.25, 0)
+shape = SubResource("RectangleShape2D_nf4l3")
