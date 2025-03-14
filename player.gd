@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 class_name Player
 
+var game_over = preload("res://game_over.tscn").instantiate()
 @export var health: float = 100
 @export var speed: float = 400
 @export var jump_force: float = 800
@@ -9,6 +10,7 @@ class_name Player
 @export var bullet_scene: PackedScene
 @export var bullet_speed: float = 2000
 @onready var animation =$AnimationPlayer
+@onready var damage = 100
 
 func _physics_process(delta):
 	var angle = (get_global_mouse_position() - global_position).angle()
@@ -61,10 +63,12 @@ func shoot():
 		bullet.velocity = direction * bullet_speed
 		get_parent().add_child(bullet)
 		
-func apply_damage(damage: float) -> void:
-	health -= damage
 		
 		
-func death():
-	if health == 0:
-		get_tree().quit()
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("spike"):
+		health -= damage
+	if health >= 0:
+		queue_free()
+		get_tree().change_scene_to_file("res://game_over.tscn")

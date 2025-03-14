@@ -11,10 +11,11 @@ config_version=5
 [application]
 
 config/name="New Game Project"
-run/main_scene="uid://skk4g4uiltex"
+run/main_scene="uid://cqgrvjb2vvump"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [global_group]
 
 player=""
+spike=""

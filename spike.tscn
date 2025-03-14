@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://ced7vxi1fsc2x"]
+[gd_scene load_steps=8 format=3 uid="uid://ced7vxi1fsc2x"]
 
 [ext_resource type="Texture2D" uid="uid://byfjsp6t8gywy" path="res://NicePng_spike-png_2342818.png" id="1_8ryga"]
-[ext_resource type="Script" uid="uid://d3c7clhlkaf8i" path="res://area_2d.gd" id="2_7k7bx"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_7k7bx"]
 
@@ -28,8 +27,7 @@ scale = Vector2(20, 20)
 mesh = SubResource("QuadMesh_7k7bx")
 texture = ExtResource("1_8ryga")
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("2_7k7bx")
+[node name="Area2D" type="Area2D" parent="." groups=["spike"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1.07143, 2.67857)

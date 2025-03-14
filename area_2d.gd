@@ -1,12 +1,13 @@
 extends Area2D
 
-@onready var gamer = $"."
-@onready var hitbox = $Area2D
-
-func _ready() -> void:
-	area_entered.connect(on_area_entered)
+@export var damage = 100
 
 
+#func _ready() -> void:
+	#body_entered.connect(on_body_entered)
+	
+	
 
-func on_area_entered(body: Node2D) -> void:
-	body.apply_damage()
+
+#func on_body_entered(body: Node2D) -> void:
+	#body.apply_damage()

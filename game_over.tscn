@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7elfxq66dv3n"]
+
+[ext_resource type="Script" uid="uid://5nlovf8810fl" path="res://game_over.gd" id="1_y26ei"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xapjj"]
+font_size = 75
+
+[sub_resource type="LabelSettings" id="LabelSettings_y26ei"]
+font_size = 100
+
+[node name="game over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y26ei")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 336.0
+offset_right = 751.0
+offset_bottom = 575.0
+
+[node name="Label" type="Label" parent="quit"]
+layout_mode = 0
+offset_right = 303.0
+offset_bottom = 239.0
+text = "QUIT"
+label_settings = SubResource("LabelSettings_xapjj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="dead" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 409.0
+text = "YOU DIES"
+label_settings = SubResource("LabelSettings_y26ei")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="quit" to="." method="_on_quit_button_down"]

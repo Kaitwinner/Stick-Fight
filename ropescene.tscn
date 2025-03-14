@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuplyfneuwq0k"]
+
+[ext_resource type="PackedScene" uid="uid://vn10apspi121" path="res://chain_piece.tscn" id="1_e2ewe"]
+
+[node name="ropescene" type="Node2D"]
+
+[node name="0" parent="." instance=ExtResource("1_e2ewe")]
+position = Vector2(3, 11)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(0, 37)
+node_a = NodePath("../0")
+node_b = NodePath("../1")
+
+[node name="1" parent="." instance=ExtResource("1_e2ewe")]
+position = Vector2(3, 48)
+
+[node name="2" parent="." instance=ExtResource("1_e2ewe")]
+position = Vector2(92, 28)
+
+[node name="3" parent="." instance=ExtResource("1_e2ewe")]
+position = Vector2(-19, 18)
+
+[node name="4" parent="." instance=ExtResource("1_e2ewe")]
+position = Vector2(53, 11)
+
+[node name="5" parent="." instance=ExtResource("1_e2ewe")]
+position = Vector2(-47, 28)
+
+[node name="6" parent="." instance=ExtResource("1_e2ewe")]
+position = Vector2(-44, 88)
+
+[node name="7" parent="." instance=ExtResource("1_e2ewe")]
+position = Vector2(3, 120)
+
+[node name="8" parent="." instance=ExtResource("1_e2ewe")]
+position = Vector2(42, 113)
+
+[node name="9" parent="." instance=ExtResource("1_e2ewe")]
+position = Vector2(67, 62)
