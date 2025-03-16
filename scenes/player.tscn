@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://c5r0twcxmwi8j"]
+[gd_scene load_steps=13 format=3 uid="uid://c5r0twcxmwi8j"]
 
-[ext_resource type="Script" uid="uid://djmdejfxb4bb3" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="PackedScene" uid="uid://cx8dhdxl8pjtp" path="res://bullet.tscn" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://djmdejfxb4bb3" path="res://scripts/player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://cx8dhdxl8pjtp" path="res://scenes/bullet.tscn" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://but0xhbpfxjj1" path="res://StickmanPack/Run/thickRunSheet.png" id="3_sweqy"]
-[ext_resource type="PackedScene" uid="uid://d3anpxnkmx7k6" path="res://gun.tscn" id="4_hqtel"]
-[ext_resource type="Script" uid="uid://balnyog7yl177" path="res://gun.gd" id="4_sweqy"]
+[ext_resource type="PackedScene" uid="uid://d3anpxnkmx7k6" path="res://scenes/gun.tscn" id="4_hqtel"]
+[ext_resource type="Script" uid="uid://balnyog7yl177" path="res://scripts/gun.gd" id="4_sweqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(67, 158.5)
@@ -67,6 +67,11 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sweqy"]
 size = Vector2(68, 159)
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_qlg0r"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_onrkg")
 bullet_scene = ExtResource("3_i3pqv")
@@ -99,5 +104,8 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-9, 7.5)
 shape = SubResource("RectangleShape2D_sweqy")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_qlg0r")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ced7vxi1fsc2x"]
 
-[ext_resource type="Texture2D" uid="uid://byfjsp6t8gywy" path="res://NicePng_spike-png_2342818.png" id="1_8ryga"]
+[ext_resource type="Texture2D" uid="uid://byfjsp6t8gywy" path="res://assets/spike.png" id="1_8ryga"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_7k7bx"]
 

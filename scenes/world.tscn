@@ -1,13 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://skk4g4uiltex"]
 
-[ext_resource type="PackedScene" uid="uid://c5r0twcxmwi8j" path="res://player.tscn" id="1_c6gwx"]
-[ext_resource type="PackedScene" path="res://platform1.tscn" id="2_2dftf"]
-[ext_resource type="PackedScene" path="res://spike.tscn" id="3_bcbcq"]
+[ext_resource type="Script" uid="uid://du2khtjvcsdgk" path="res://scripts/world.gd" id="1_k0juu"]
+[ext_resource type="PackedScene" uid="uid://dxvapcvhaxjcy" path="res://scenes/platform.tscn" id="2_2dftf"]
+[ext_resource type="PackedScene" uid="uid://ced7vxi1fsc2x" path="res://scenes/spike.tscn" id="3_bcbcq"]
 
-[node name="world" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_c6gwx")]
-position = Vector2(123, 332)
+[node name="World" type="Node2D"]
+script = ExtResource("1_k0juu")
 
 [node name="spikes" type="Node2D" parent="."]
 
@@ -50,3 +48,11 @@ scale = Vector2(40, 25)
 
 [node name="4" parent="platforms" instance=ExtResource("2_2dftf")]
 scale = Vector2(60, 25)
+
+[node name="PlayerSpawns" type="Node" parent="."]
+
+[node name="Spawn1" type="Node2D" parent="PlayerSpawns"]
+position = Vector2(-420, 349)
+
+[node name="Spawn2" type="Node2D" parent="PlayerSpawns"]
+position = Vector2(351, 364)

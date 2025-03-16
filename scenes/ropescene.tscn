@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cuplyfneuwq0k"]
 
-[ext_resource type="PackedScene" uid="uid://vn10apspi121" path="res://chain_piece.tscn" id="1_e2ewe"]
+[ext_resource type="PackedScene" uid="uid://vn10apspi121" path="res://scenes/chain_piece.tscn" id="1_e2ewe"]
 
 [node name="ropescene" type="Node2D"]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byfjsp6t8gywy"
-path="res://.godot/imported/NicePng_spike-png_2342818.png-da95f33e44b3423d0f14d7c6b3e64f15.ctex"
+uid="uid://cfcflen16kxxr"
+path="res://.godot/imported/chain_piece.png-3ae855f76ee4bd8b76c5b7aca036e4bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NicePng_spike-png_2342818.png"
-dest_files=["res://.godot/imported/NicePng_spike-png_2342818.png-da95f33e44b3423d0f14d7c6b3e64f15.ctex"]
+source_file="res://assets/chain_piece.png"
+dest_files=["res://.godot/imported/chain_piece.png-3ae855f76ee4bd8b76c5b7aca036e4bc.ctex"]
 
 [params]
 

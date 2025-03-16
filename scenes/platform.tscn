@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxvapcvhaxjcy"]
 
-[ext_resource type="Texture2D" uid="uid://dq407c81cpvj6" path="res://pngegg.png" id="1_o32kh"]
+[ext_resource type="Texture2D" uid="uid://dq407c81cpvj6" path="res://assets/grass_platform.png" id="1_o32kh"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_8ulag"]
 

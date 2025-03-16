@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="New Game Project"
-run/main_scene="uid://cqgrvjb2vvump"
+run/main_scene="uid://dyo2l5bi4y22k"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/icon.svg"
+
+[autoload]
+
+Lobby="*res://singletons/lobby.gd"
 
 [global_group]
 
