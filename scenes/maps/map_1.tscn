@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbj3owtbx135h"]
+
+[ext_resource type="PackedScene" uid="uid://ced7vxi1fsc2x" path="res://scenes/spike.tscn" id="1_qmw3c"]
+[ext_resource type="PackedScene" uid="uid://dxvapcvhaxjcy" path="res://scenes/platform.tscn" id="2_a6ifl"]
+
+[node name="Map1" type="Node2D"]
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="spike" parent="Spikes" instance=ExtResource("1_qmw3c")]
+position = Vector2(-380, 146)
+
+[node name="spike2" parent="Spikes" instance=ExtResource("1_qmw3c")]
+position = Vector2(-248, 146)
+
+[node name="spike3" parent="Spikes" instance=ExtResource("1_qmw3c")]
+position = Vector2(-120, 146)
+
+[node name="spike4" parent="Spikes" instance=ExtResource("1_qmw3c")]
+position = Vector2(7.99998, 146)
+
+[node name="spike5" parent="Spikes" instance=ExtResource("1_qmw3c")]
+position = Vector2(136, 146)
+
+[node name="spike6" parent="Spikes" instance=ExtResource("1_qmw3c")]
+position = Vector2(272, 146)
+
+[node name="spike7" parent="Spikes" instance=ExtResource("1_qmw3c")]
+position = Vector2(400, 146)
+
+[node name="spike8" parent="Spikes" instance=ExtResource("1_qmw3c")]
+position = Vector2(536, 146)
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="1" parent="Platforms" instance=ExtResource("2_a6ifl")]
+position = Vector2(6, 567)
+
+[node name="2" parent="Platforms" instance=ExtResource("2_a6ifl")]
+position = Vector2(-1087, 250)
+scale = Vector2(40, 25)
+
+[node name="3" parent="Platforms" instance=ExtResource("2_a6ifl")]
+position = Vector2(1264, 250)
+scale = Vector2(40, 25)
+
+[node name="4" parent="Platforms" instance=ExtResource("2_a6ifl")]
+scale = Vector2(60, 25)
+
+[node name="PlayerSpawns" type="Node" parent="."]
+
+[node name="Spawn1" type="Node2D" parent="PlayerSpawns"]
+position = Vector2(-420, 349)
+
+[node name="Spawn2" type="Node2D" parent="PlayerSpawns"]
+position = Vector2(351, 364)

@@ -3,7 +3,7 @@ extends Node2D
 func _spawn_players():
 	var player_scene = preload("res://scenes/player.tscn")
 	
-	var player_spawns = $PlayerSpawns.get_children()
+	var player_spawns = $Map1/PlayerSpawns.get_children()
 	var spawn_counter = 0
 	
 	for player_info in Lobby.players.values():

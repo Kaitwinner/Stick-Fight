@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3anpxnkmx7k6"]
+[gd_scene load_steps=4 format=3 uid="uid://d3anpxnkmx7k6"]
 
+[ext_resource type="Script" uid="uid://dgvi6au43lld1" path="res://scripts/gun.gd" id="1_og67c"]
 [ext_resource type="Texture2D" uid="uid://b7scfd4c0o1y1" path="res://assets/gun.png" id="1_vk1bi"]
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_x77fm"]
+properties/0/path = NodePath(".:rotation")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [node name="Gun" type="Node2D"]
+script = ExtResource("1_og67c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 12)
@@ -12,3 +19,6 @@ flip_h = true
 
 [node name="BulletExit" type="Node2D" parent="."]
 position = Vector2(25, 0)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_x77fm")

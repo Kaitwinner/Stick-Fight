@@ -4,10 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://cx8dhdxl8pjtp" path="res://scenes/bullet.tscn" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://but0xhbpfxjj1" path="res://StickmanPack/Run/thickRunSheet.png" id="3_sweqy"]
 [ext_resource type="PackedScene" uid="uid://d3anpxnkmx7k6" path="res://scenes/gun.tscn" id="4_hqtel"]
-[ext_resource type="Script" uid="uid://balnyog7yl177" path="res://scripts/gun.gd" id="4_sweqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(67, 158.5)
+
+[sub_resource type="GDScript" id="GDScript_dqkch"]
 
 [sub_resource type="Animation" id="Animation_1jxqw"]
 length = 0.001
@@ -90,7 +91,7 @@ hframes = 9
 zoom = Vector2(0.5, 0.5)
 
 [node name="GunPos" type="Node2D" parent="."]
-script = ExtResource("4_sweqy")
+script = SubResource("GDScript_dqkch")
 
 [node name="Gun" parent="GunPos" instance=ExtResource("4_hqtel")]
 
